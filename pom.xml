@@ -54,7 +54,7 @@
 
 		<dependency>
 			<groupId>org.test</groupId>
-			<artifactId>dataBDD2</artifactId>
+			<artifactId>dataBDDClient</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		
