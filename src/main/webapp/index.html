@@ -1,72 +1,98 @@
+<!doctype html >
 <html >
-<body>
+<body ng-app="bankingApp">
 
-<link rel="stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Les directives : ng-show et ng-hide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-<h3> Formulaire d'ajout d'un client </h3> 
 
-<br><br>
+<!--  BAR DE NAVIGATION -->
 
-<form class="form-horizontal">
-<div ng-app="formExample">
-<div ng-controller="ExampleController">
+<!-- FORMULAIRE DE CONNECTION -->
 
-  <ng-form novalidate class="simple-form">
-  
-  <div class="form-group">
-  
-  <label class="col-sm-2 control-label">Id</label>
-  <input type="text" ng-model="user.login" /><br /> <br>
-  
-  <label class="col-sm-2 control-label">Nom</label>
-  <input type="text" ng-model="user.nom" /><br /> <br>
-  
-   <label class="col-sm-2 control-label">Prenom</label>
-   <input type="text" ng-model="user.prenom" /><br /> <br>
-   
-    <label class="col-sm-2 control-label">Adresse</label>
-    <input type="text" ng-model="user.adresse" /><br /> <br>
-    
-     <label class="col-sm-2 control-label">E-mail</label>
-     <input type="email" ng-model="user.mail" /><br /> <br> 
-    
-  <div class="col-sm-10">
-  
-  <label class="col-sm-2 control-label"></label>
-  <button class="btn btn-success" ng-click="saveClient(user)">
-  <span class="glyphicon glyphicon-save"></span> Ajouter
-  </button>
-  
-   <input type="button" ng-click="asyncLoadClients()" value="Load Clients" value="set background" />
-</ng-form></form><br><br><br><br>
+<!-- Afficher juste ce qu'on écrit apres avoir valider -->
 
-<h3>La liste des clients</h3><br>
+<!-- <div ng-controller='ControlleurConnexion'>
+ 	<form ng-submit="connexion()">
+      	<div>Login : <input ng-model="identifiants" /></div>
+		<button type="submit">Se connecter</button>
+	</form>
+	
+	<div>
+		 <p>login attendu : {{utilisateur}}</p>
+		 <p>Login rentré : {{identifiants}}</p>
+		 <p>Etat de la connexion : {{resultat}}</p>
+    </div>
+	</div> -->
+
+<div ng-controller='ControlleurConnexion'>
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" >
+		<form class="navbar-form navbar-left" ng-submit="connexion()">
+		  <div class="form-group">
+			<!-- <input type="text" class="form-control" placeholder="Login" style="width: 150px" ng-model="element3"/> -->
+			<input type="password" class="form-control" placeholder="Mot de passe" style="width: 200px" ng-model="identifiants" />
+		  </div>
+		  <button class="btn btn-success"> Connexion </button>  
+		 </form>
+		 <div class="collapse navbar-collapse navbar-left">
+		  	<ul class="nav navbar-nav">
+				<li role="presentation">
+				  	<a href="accueil.html">
+				  	<span tooltip="syntese" tooltip-placement="bottom">Aller vers l'accueil</span>
+				  	</a>
+			  	</li>
+			</ul>
+		 </div> 
+	</div>
+	<br>
+	<br>
+	<br>
+	<div ng-show="someBoolean">
+		<p>Non connecté. Veuillez rentrer votre mot de passe : {{identifiants}}</p>
+	</div>
+	<div>
+		<p>Etat de la connexion : {{resultat}}</p>
+	</div>
+</div>
+
+<div class="container">
+	 <div class="jumbotron">
+		 <div class="row">
+			<div class="col-md-3">
+				<img src="image/images1.jpg" alt="BANQUE"/>
+			</div>
+			<div class="col-md-10">
+				<h1>Bienvenue dans votre service BanqueProject</h1>
+				<h2>Entrez votre login et votre mot de passe</h2>
+			</div>
+		 </div>
+	 </div>
+</div>
+
 <br>
-<table class="table table-striped">
-<thead> 
-<tr>
-    <th>Login</th>
-    <th>Nom</th>
-    <th>Prenom</th>
-    <th>Adresse</th>
-    <th>Email</th>
-</tr>
-</thead>
-<tbody>
-<tr ng-repeat="e in contacts">
-    <td>{{ e.login }}</td>
-    <td>{{ e.nom }}</td>
-    <td>{{ e.prenom }}</td>
-    <td>{{ e.adresse }}</td>
-    <td>{{ e.mail }}</td>
- </tr>
-</tbody>
-</table>   
-</div>
-</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!----------------------- Bibliothèque --------------------------->
 
 
-<script src="angular.min.js"></script>
-<script src="app.js"></script>
+<script src="js/libs/jquery-1.11.2.js"></script>
+<script src="js/libs/angular.js"></script>
+<script src="js/libs/angular-route.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script src="js/app/application.js"></script>
 </body>
+
 </html>

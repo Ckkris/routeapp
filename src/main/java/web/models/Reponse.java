@@ -6,12 +6,15 @@ public class Reponse {
 private int status;
 // la réponse JSON
 private Object data;
+
+private Object data1;
 // ---------------constructeurs
 public Reponse() {
 }
-public Reponse(int status, Object data) {
+public Reponse(int status, Object data, Object data1) {
 this.status = status;
 this.data = data;
+this.data1= data1;
 }
 // méthodes
 public void incrStatusBy(int increment) {
@@ -25,6 +28,10 @@ public long getStatus() {
 }
 public Object getData() {
     return data;
+}
+
+public Object getData1() {
+    return data1;
 }
 
 }
