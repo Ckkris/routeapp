@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- Affichage tous les comptes -------------------------------------------------------->
+
+<!-- <h2> Ajouter un client dans la base de donnees</h2>
+<br>
+	<div ng-controller="ExampleController2">
+		<form class="form-horizontal">
+			  <ng-form novalidate class="simple-form">
+  
+		  			<div class="form-group">
+		  
+						<label class="col-sm-2 control-label">login_fk</label>
+			  			<input type="text" ng-model="user.login_fk" /><br /> <br>
+			  
+						<label class="col-sm-2 control-label">id_compte</label>
+						<input type="text" ng-model="user.id_compte" /><br /> <br>
+			  
+						<label class="col-sm-2 control-label">plafond</label>
+						<input type="text" ng-model="user.plafond" /><br /> <br>
+			   
+					    <label class="col-sm-2 control-label">montant</label>
+					    <input type="text" ng-model="user.montant" /><br /> <br>
+			    
+					    <label class="col-sm-2 control-label">datecreation</label>
+					    <input type="text" ng-model="user.datecreation" /><br /> <br> 
+		    
+		  			<div class="col-sm-10">
+		  
+						  <label class="col-sm-2 control-label"></label>
+						  <button class="btn btn-success" ng-click="saveCourant(user)">
+						  <span class="glyphicon glyphicon-save"></span> Ajouter
+						  </button>
+		  
+		   				
+				</ng-form>
+		</form>
+		
+		<br>
+		<br>
+		<br> -->
+		
+<div ng-controller="ControllerAllComptes">
+		
+	<h2>La liste des Courant</h2>
+		<br>
+		<br>
+		
+		<input type="button" ng-click="asyncLoadCourant()" value="Afficher tous les comptes courants" value="set background" />
+		<table class="table table-striped">
+		<thead> 
+		<tr>
+		    <th>login du client</th>
+		    <th>id du compte</th>
+		    <th>plafond</th>
+		    <th>montant</th>
+		    <th>datecreation</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="e in courant">
+		    <td>{{ e.login_fk }}</td>
+		    <td>{{ e.id_compte }}</td>
+		    <td>{{ e.plafond }}</td>
+		    <td>{{ e.montant }}</td>
+		    <td>{{ e.dateCreation }}</td>
+ 		</tr>
+		</tbody>
+		</table>
+		<br>
+		<br>
+		
+	<h2>La liste des Pel</h2>
+		<br>
+		<br>
+		
+		<input type="button" ng-click="asyncLoadPel()" value="Afficher tous les comptes pel" value="set background" />
+		<table class="table table-striped">
+		<thead> 
+		<tr>
+		    <th>login du client</th>
+		    <th>id du compte</th>
+		    <th>plafond</th>
+		    <th>montant</th>
+		    <th>datecreation</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="e in pel"> 
+		    <td>{{ e.login_fk }}</td>
+		    <td>{{ e.id_compte }}</td>
+		    <td>{{ e.plafond }}</td>
+		    <td>{{ e.montant }}</td>
+		    <td>{{ e.dateCreation }}</td>
+ 		</tr>
+		</tbody>
+		</table>
+		<br>
+		<br>
+		
+		<h2>La liste des courants negatif</h2>
+		<br>
+		<br>
+		
+		<input type="button" ng-click="asyncLoadCourantNeg()" value="Afficher les comptes courants negatifs" value="set background" />
+		<table class="table table-striped">
+		<thead> 
+		<tr>
+		    <th>login du client</th>
+		    <th>id du compte</th>
+		    <th>plafond</th>
+		    <th>montant</th>
+		    <th>datecreation</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="e in courantneg"> 
+		    <td>{{ e.login_fk }}</td>
+		    <td>{{ e.id_compte }}</td>
+		    <td>{{ e.plafond }}</td>
+		    <td>{{ e.montant }}</td>
+		    <td>{{ e.dateCreation }}</td>
+ 		</tr>
+		</tbody>
+		</table>
+
+		</div>
+		
+</body>
+</html>

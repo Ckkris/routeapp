@@ -1,0 +1,44 @@
+<!doctype html>
+<body>
+
+
+<div ng-app="bankingApp">
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" >
+		 <div class="collapse navbar-collapse navbar-left">
+		 
+		  	<ul class="nav navbar-nav">
+		  		
+		  		<li role="presentation"><a href="#/Client">Client</a></li>
+				<li role="presentation"><a href="#/Compte">Compte</a></li>
+		  		<li role="presentation"><a href="#/Synthese">Synthese</a></li>
+		  		<li role="presentation"><a href="#/Virement">Virement</a></li>
+		  		<li role="presentation">
+				  	<a href="../index.html">
+				  	<span tooltip="syntese" tooltip-placement="bottom">Deconnexion</span>
+				  	</a>
+			  	</li>
+			</ul>
+		 </div>
+		 </div> 
+	 
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<div class="container">
+		<div ng-view=""></div>
+	</div>
+ </div>
+
+<script src="../js/libs/jquery-1.11.2.js"></script>
+<script src="../js/libs/angular.js"></script>
+<script src="../js/libs/angular-route.js"></script>
+
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css">
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+
+<script src="../js/app/application.js"></script>
+</body>

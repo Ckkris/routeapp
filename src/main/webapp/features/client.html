@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<!-- Affichage tous le clients -------------------------------------------------------->
+
+<br>
+	<div ng-controller="ControllerAllClients">
+	
+		<!-- 
+		<h2> Ajouter un client dans la base de donnees</h2>
+		
+		<form class="form-horizontal">
+			  <ng-form novalidate class="simple-form">
+  
+		  			<div class="form-group">
+		  
+						  <label class="col-sm-2 control-label">Id</label>
+						  <input type="text" ng-model="user.login" /><br /> <br>
+		  
+						  <label class="col-sm-2 control-label">Nom</label>
+						  <input type="text" ng-model="user.nom" /><br /> <br>
+		  
+						  <label class="col-sm-2 control-label">Prenom</label>
+						  <input type="text" ng-model="user.prenom" /><br /> <br>
+		   
+						  <label class="col-sm-2 control-label">Adresse</label>
+						  <input type="text" ng-model="user.adresse" /><br /> <br>
+		    
+						  <label class="col-sm-2 control-label">E-mail</label>
+						  <input type="email" ng-model="user.mail" /><br /> <br> 
+						  
+						  <label class="col-sm-2 control-label">Password</label>
+						  <input type="email" ng-model="user.password" /><br /> <br> 
+		    
+		  			<div class="col-sm-10">
+		  
+						  <label class="col-sm-2 control-label"></label>
+						  <button class="btn btn-success" ng-click="saveClient(user)">
+						  <span class="glyphicon glyphicon-save"></span> Ajouter
+						  </button>
+		  
+		   				
+				</ng-form>
+		</form>
+		 -->
+		<br>
+		<br>
+		<br>
+		
+		<!-- <h2>La liste des Cients 1 </h2>
+		<br>
+		<br>
+		
+		<input type="button" ng-click="asyncLoadClients()" value="Load Clients" value="set background" />
+		<table class="table table-striped">
+		<thead> 
+		<tr>
+		    <th>Login</th>
+		    <th>Nom</th>
+		    <th>Prenom</th>
+		    <th>Adresse</th>
+		    <th>Email</th>
+		    <th>password</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="c in contacts">
+		    <td>{{ c.login }}</td>
+		    <td>{{ c.nom }}</td>
+		    <td>{{ c.prenom }}</td>
+		    <td>{{ c.adresse }}</td>
+		    <td>{{ c.mail }}</td>
+		    <td>{{ c.password }}</td>
+		</tr>
+		</tbody>
+		</table> -->
+		
+		
+		<h2>La liste des Cients 2 </h2>
+		<br>
+		<br>
+		
+		<input type="button" ng-click="asyncLoadClients()" value="Afficher les clients" value="set background" />
+		<table class="table table-striped">
+		<thead> 
+		<tr>
+		    <th>Login</th>
+		   <!--  <th>Nom</th>
+		    <th>Prenom</th>
+		    <th>Adresse</th>
+		    <th>Email</th>
+		    <th>password</th> -->
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="c in contacts">
+		    <td><input type="button" ng-click="asyncLoadClients()" value="{{ c.login }}" value="set background" /></td>
+<!-- 		    <td>{{ c.nom }}</td>
+		    <td>{{ c.prenom }}</td>
+		    <td>{{ c.adresse }}</td>
+		    <td>{{ c.mail }}</td>
+		    <td>{{ c.password }}</td> -->
+		</tr>
+		</tbody>
+		</table>
+		
+	</div>
+		
+		
+</body>
+</html>
