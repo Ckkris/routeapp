@@ -10,9 +10,9 @@
 <!-- Affichage tous le clients -------------------------------------------------------->
 
 <br>
-	<div ng-controller="ControllerAllClients">
+	<div ng-controller="ControllerClients">
 	
-		<!-- 
+		 
 		<h2> Ajouter un client dans la base de donnees</h2>
 		
 		<form class="form-horizontal">
@@ -48,7 +48,6 @@
 		   				
 				</ng-form>
 		</form>
-		 -->
 		<br>
 		<br>
 		<br>
@@ -90,22 +89,22 @@
 		<table class="table table-striped">
 		<thead> 
 		<tr>
-		    <th>Login</th>
-		   <!--  <th>Nom</th>
+		    <!-- <th>Login</th> -->
+		   <th>Nom</th>
 		    <th>Prenom</th>
 		    <th>Adresse</th>
 		    <th>Email</th>
-		    <th>password</th> -->
+		    <th>password</th>
 		</tr>
 		</thead>
 		<tbody>
 		<tr ng-repeat="c in contacts">
-		    <td><input type="button" ng-click="asyncLoadClients()" value="{{ c.login }}" value="set background" /></td>
-<!-- 		    <td>{{ c.nom }}</td>
+		    <!-- <td><input type="button" ng-click="asyncLoadClients()" value="{{ c.login }}" value="set background" /></td> -->
+			<td>{{ c.nom }}</td>
 		    <td>{{ c.prenom }}</td>
 		    <td>{{ c.adresse }}</td>
 		    <td>{{ c.mail }}</td>
-		    <td>{{ c.password }}</td> -->
+		    <td>{{ c.password }}</td>
 		</tr>
 		</tbody>
 		</table>

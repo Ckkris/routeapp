@@ -77,6 +77,13 @@ public class Controller1 {
 		public List<Courant> getcourantbylogin(String loginfk) {
 				return application.findByLoginfk(loginfk);
 		}
+		
+		
+	@RequestMapping(value = "/courant", method = RequestMethod.POST)
+	public Courant saveCourant(@RequestBody Courant courant) {
+		return application.saveCourant(courant);
+	}
+		
 	//PELS__________________________________________________________________
 	
 	// liste des pels

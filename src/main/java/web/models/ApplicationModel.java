@@ -6,6 +6,7 @@ import org.demo.core.entities.Client;
 import org.demo.core.entities.Compte;
 import org.demo.core.entities.Courant;
 import org.demo.core.entities.PEL;
+import org.demo.core.entities.Transaction;
 import org.demo.core.metier.IMetier;
 import org.demo.core.metier.Metier;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +67,9 @@ public class ApplicationModel implements IMetier{
 		return métier.findByLoginfk(loginfk);
 	}
 
+	public Courant saveCourant(Courant courant) {
+		return métier.saveCourant(courant);
+	}
 	//PEL____________________________________________________
 	
 	@Override
@@ -74,9 +78,29 @@ public class ApplicationModel implements IMetier{
 		return métier.getAllPels();
 	}
 	
+	
+	//_______________________________________________________
 
 	@Override
 	public List<PEL> getPelNegatif() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Transaction> getAllTransactions() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Transaction> getTransactionsDate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Transaction> getTransactionsDateCompteNeg() {
 		// TODO Auto-generated method stub
 		return null;
 	}

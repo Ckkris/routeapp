@@ -84,7 +84,7 @@ app.controller('ControlleurConnexion', function($scope, $http) {
 
 //Controller liste client----------------------------------------
 
-app.controller('ControllerAllClients', 
+app.controller('ControllerClients', 
 		
 		function($scope, $http) 
 		{
@@ -110,21 +110,21 @@ app.controller('ControllerAllClients',
 
 //Controller liste compte----------------------------------------
 
-app.controller('ControllerAllComptes', function($scope, $http) {
+app.controller('ControllerComptes', function($scope, $http) {
 
-//	$scope.courant = [];
-//	$scope.user = {
-//			id_compte: "id_compte...",
-////			plafond: "plafond...",
-////			montant: "montant...",
-//	};
-//	
-//	$scope.saveCompte = function() {
-//		var compte = $scope.user;
-//		$http.post('/compte', compte).success(function(data1) {
-//			$scope.user = data1;
-//		});
-//	};
+	$scope.courant = [];
+	$scope.user = {
+			id_compte: "id_compte...",
+			plafond: "plafond...",
+			montant: "montant...",
+	};
+	
+	$scope.saveCourant = function() {
+		var courant = $scope.user;
+		$http.post('/courant', courant).success(function(data1) {
+			$scope.user = data1;
+		});
+	};
 	
 	$scope.asyncLoadCourant = function() {
 		$http.get('/getAllCourants').success(function(data1) {
@@ -143,5 +143,23 @@ app.controller('ControllerAllComptes', function($scope, $http) {
 			$scope.courantneg = data1;
 		});
 	}
+	
+	
+	$scope.asyncLoadCourantclient = function() {
+		$http.get('/getCourantByLogin()/{loginfk}').success(function(data1) {
+			$scope.courantclient = data1;
+		});
+	}
+});
+
+
+//Controller ng-show div accueil________________________________________
+
+
+app.controller('hideAccueil', function($scope) {
+	$scope.someBoolean=true;;
+	$scope.fonctionhide = function() {
+		$scope.someBoolean = false;
+    };
 });
 

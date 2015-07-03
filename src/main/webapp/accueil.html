@@ -3,34 +3,51 @@
 
 
 <div ng-app="bankingApp">
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" >
-		 <div class="collapse navbar-collapse navbar-left">
+	<div ng-controller="hideAccueil">
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" >
+			 <div class="collapse navbar-collapse navbar-left">
+			 
+			  	<ul class="nav navbar-nav">
+			  		
+			  		<li role="presentation"><a href="#/Client" ng-click="fonctionhide()">Client</a></li>
+					<li role="presentation"><a href="#/Compte" ng-click="fonctionhide()">Compte</a></li>
+			  		<li role="presentation"><a href="#/Synthese" ng-click="fonctionhide()">Synthese</a></li>
+			  		<li role="presentation"><a href="#/Virement" ng-click="fonctionhide()">Virement</a></li>
+			  		<li role="presentation">
+					  	<a href="../index.html">
+					  	<span tooltip="syntese" tooltip-placement="bottom">Deconnexion</span>
+					  	</a>
+				  	</li>
+				</ul>
+			 </div>
+			 </div> 
 		 
-		  	<ul class="nav navbar-nav">
-		  		
-		  		<li role="presentation"><a href="#/Client">Client</a></li>
-				<li role="presentation"><a href="#/Compte">Compte</a></li>
-		  		<li role="presentation"><a href="#/Synthese">Synthese</a></li>
-		  		<li role="presentation"><a href="#/Virement">Virement</a></li>
-		  		<li role="presentation">
-				  	<a href="../index.html">
-				  	<span tooltip="syntese" tooltip-placement="bottom">Deconnexion</span>
-				  	</a>
-			  	</li>
-			</ul>
-		 </div>
-		 </div> 
-	 
-	
-	<br>
-	<br>
-	<br>
-	<br>
-	
-	<div class="container">
-		<div ng-view=""></div>
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		
+		
+		<div class="container" ng-show="someBoolean">
+		 	<div class="jumbotron">
+				 <div class="row">
+					<div class="col-md-3">
+						<img src="image/images1.jpg" alt="BANQUE"/>
+					</div>
+					<div class="col-md-10">
+						<h1>ACCUEIL</h1>
+					</div>
+				 </div>
+		 	</div>
+		</div>
+		
+		<div class="container">
+			<div ng-view=""></div>
+		</div>
+		
 	</div>
- </div>
+</div>
 
 <script src="../js/libs/jquery-1.11.2.js"></script>
 <script src="../js/libs/angular.js"></script>
